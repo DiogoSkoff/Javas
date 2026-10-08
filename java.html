@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funções em JavaScript</title>
+</head>
+<body>
+  <script>
+    function mostrarMensagem() {
+      console.log("Bem-vindo ao estudo de funções em JavaScript!");
+    }
+    mostrarMensagem();
+
+    function somaSimples() {
+      let resultado = 4 + 6;
+      console.log(resultado);
+    }
+    somaSimples();
+
+    function imprimirNome() {
+      let nome = "Ronald";
+      console.log(nome);
+    }
+    imprimirNome();
+
+    function quadrado(numero) {
+      return numero * numero;
+    }
+    console.log(quadrado(5));
+
+    function converterParaCelsius(fahrenheit) {
+      return (fahrenheit - 32) * 5 / 9;
+    }
+    console.log(converterParaCelsius(98.6));
+
+    function concatenaPalavras(palavra1, palavra2) {
+      return palavra1 + " " + palavra2;
+    }
+    console.log(concatenaPalavras("ronaldinho", "gaucho"));
+
+    function calcularMedia(nota1, nota2, nota3) {
+      let soma = nota1 + nota2 + nota3;
+      return soma / 3;
+    }
+    console.log(calcularMedia(30, 8, 6));
+
+    function desconto(valor, percentual) {
+      let valorDesconto = valor * percentual / 100;
+      return valor - valorDesconto;
+    }
+    console.log(desconto(140, 10));
+
+    function saudacaoPersonalizada(nome) {
+      return "Olá, " + nome + "! Seja bem-vindo.";
+    }
+    console.log(saudacaoPersonalizada("Ronald"));
+
+    const multiplicar = function (a, b) {
+      return a * b;
+    };
+    console.log(multiplicar(7, 3));
+
+    const dividir = function (a, b) {
+      return a / b;
+    };
+    console.log(dividir(5, 5));
+
+    const dobro = (numero) => numero * 2;
+    console.log(dobro(4));
+
+    const ehPar = (numero) => numero % 2 === 0;
+    console.log(ehPar(8));
+    console.log(ehPar(7));
+
+    function calculadora(x, y) {
+      function soma(x, y) {
+        return x + y;
+      }
+
+      function subtrair(x, y) {
+        return x - y;
+      }
+
+      console.log("Soma: " + soma(x, y));
+      console.log("Subtração: " + subtrair(x, y));
+    }
+    calculadora(10, 4);
+
+    function operacoesAvancadas(x, y) {
+      function produto(x, y) {
+        return x * y;
+      }
+
+      function potencia(x, y) {
+        return x ** y;
+      }
+
+      return {
+        produto: produto(x, y),
+        potencia: potencia(x, y)
+      };
+    }
+
+    let resultado = operacoesAvancadas(2, 5);
+    console.log(resultado);
+    console.log(resultado.produto);
+    console.log(resultado.potencia);
+  </script>
+</body>
+</html>
