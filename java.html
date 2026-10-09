@@ -1,111 +1,78 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Funções em JavaScript</title>
+  <title>Formulário de Cadastro</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <script>
-    function mostrarMensagem() {
-      console.log("Bem-vindo ao estudo de funções em JavaScript!");
-    }
-    mostrarMensagem();
+  <main class="container">
 
-    function somaSimples() {
-      let resultado = 4 + 6;
-      console.log(resultado);
-    }
-    somaSimples();
+    <section class="coluna">
+      <h1>Cadastro</h1>
+      <form id="cadastroForm" novalidate>
 
-    function imprimirNome() {
-      let nome = "Ronald";
-      console.log(nome);
-    }
-    imprimirNome();
+        <div class="campo">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" placeholder="Ex.: Maria da Silva" required>
+          <span class="erro" id="erroNome"></span>
+        </div>
 
-    function quadrado(numero) {
-      return numero * numero;
-    }
-    console.log(quadrado(5));
+        <div class="campo">
+          <label for="email">E-mail institucional</label>
+          <input type="email" id="email" placeholder="nome@escola.edu.br" required>
+          <span class="erro" id="erroEmail"></span>
+        </div>
 
-    function converterParaCelsius(fahrenheit) {
-      return (fahrenheit - 32) * 5 / 9;
-    }
-    console.log(converterParaCelsius(98.6));
+        <div class="campo">
+          <label for="senha">Senha de acesso</label>
+          <input type="password" id="senha" placeholder="Mínimo de 6 caracteres" minlength="6" required>
+          <span class="erro" id="erroSenha"></span>
+        </div>
 
-    function concatenaPalavras(palavra1, palavra2) {
-      return palavra1 + " " + palavra2;
-    }
-    console.log(concatenaPalavras("ronaldinho", "gaucho"));
+        <div class="campo">
+          <label for="confirmaSenha">Confirmação de senha</label>
+          <input type="password" id="confirmaSenha" placeholder="Digite a senha novamente" required>
+          <span class="erro" id="erroConfirma"></span>
+        </div>
 
-    function calcularMedia(nota1, nota2, nota3) {
-      let soma = nota1 + nota2 + nota3;
-      return soma / 3;
-    }
-    console.log(calcularMedia(30, 8, 6));
+        <div class="campo">
+          <label for="perfil">Perfil técnico</label>
+          <select id="perfil" required>
+            <option value="">Selecione uma área...</option>
+            <option value="Redes">Redes</option>
+            <option value="Desenvolvimento">Desenvolvimento</option>
+            <option value="Suporte">Suporte</option>
+          </select>
+          <span class="erro" id="erroPerfil"></span>
+        </div>
 
-    function desconto(valor, percentual) {
-      let valorDesconto = valor * percentual / 100;
-      return valor - valorDesconto;
-    }
-    console.log(desconto(140, 10));
+        <div class="campo campo-check">
+          <input type="checkbox" id="termos" required>
+          <label for="termos">Li e aceito os termos de uso</label>
+          <span class="erro" id="erroTermos"></span>
+        </div>
 
-    function saudacaoPersonalizada(nome) {
-      return "Olá, " + nome + "! Seja bem-vindo.";
-    }
-    console.log(saudacaoPersonalizada("Ronald"));
+        <button type="submit">Cadastrar</button>
+      </form>
+    </section>
 
-    const multiplicar = function (a, b) {
-      return a * b;
-    };
-    console.log(multiplicar(7, 3));
+    <section class="coluna painel">
+      <h2>Dados cadastrados</h2>
+      <p id="mensagemSucesso" class="sucesso"></p>
+      <dl>
+        <dt>Nome</dt>
+        <dd id="saidaNome">—</dd>
+        <dt>E-mail</dt>
+        <dd id="saidaEmail">—</dd>
+        <dt>Perfil técnico</dt>
+        <dd id="saidaPerfil">—</dd>
+      </dl>
+    </section>
 
-    const dividir = function (a, b) {
-      return a / b;
-    };
-    console.log(dividir(5, 5));
+  </main>
 
-    const dobro = (numero) => numero * 2;
-    console.log(dobro(4));
-
-    const ehPar = (numero) => numero % 2 === 0;
-    console.log(ehPar(8));
-    console.log(ehPar(7));
-
-    function calculadora(x, y) {
-      function soma(x, y) {
-        return x + y;
-      }
-
-      function subtrair(x, y) {
-        return x - y;
-      }
-
-      console.log("Soma: " + soma(x, y));
-      console.log("Subtração: " + subtrair(x, y));
-    }
-    calculadora(10, 4);
-
-    function operacoesAvancadas(x, y) {
-      function produto(x, y) {
-        return x * y;
-      }
-
-      function potencia(x, y) {
-        return x ** y;
-      }
-
-      return {
-        produto: produto(x, y),
-        potencia: potencia(x, y)
-      };
-    }
-
-    let resultado = operacoesAvancadas(2, 5);
-    console.log(resultado);
-    console.log(resultado.produto);
-    console.log(resultado.potencia);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
